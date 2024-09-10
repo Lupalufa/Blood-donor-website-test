@@ -1,0 +1,111 @@
+/* GLOBAL */
+
+html, body {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    height: 100vh;
+}
+
+/* TITULOS */
+header h1, main h2 {
+    margin-bottom: 70px;
+}
+
+.form h2 {
+    text-align: right;
+}
+
+/* ESTRUTURA */
+header, main, footer {
+    text-align: center;
+}
+
+header, .form, main {
+    margin-bottom: 70px;          /* espaçamento com margin */
+
+    
+   /* 
+    margin: 0 auto 70px auto;  
+    
+    Quando destacamos só o (margin) estou dizendo q ele vai preencher tanto o meu topo, direito, baixo e esquerdo reespectivamente;
+    por isso se deve por a porcentagem de cada margem como dado o exemplo (0, auto, 70px, auto) pois no topo não coloquei
+    nenhum criterio, no "margin-bottom" esta em 70 px, meus left and right esta auto/ isso serve para eu diminuir o conteudo 
+    das linhas e assim usar menos linhas com mais códigos */
+
+    width: 90%;                 /* limites dos elementos na página */
+    max-width: 500px;
+
+
+    
+    margin-left: auto;            
+                        /* pq ficou centralizado todo o meu HTML?, margin-left e margin-right diz que, se eu expandir tanto o meu lado 
+                        direito como o esquerdo ele continuara pondo margens, mas pq esta centralizado? por causa do Text-align: center */
+    margin-right: auto;                   
+}
+
+/* HEADER */
+header button {
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+/* FORM */
+section.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    grid-gap: 45px;
+}
+
+form input,
+form button {
+    width: 100%;
+
+    margin-bottom: 4px;
+
+    box-sizing: border-box;   
+    
+    /* Todo o navegador ele tem um limite caracteristico que pode ajudar ou atrapalhar, nesse caso. o sistema identifica que eu tenho um conteúdo de
+    100% e estou adicionando mais 16 px a esquerda e direita, logo. Eu tenho 32px + 100% totalizando 132px, "Box Sizing: border-box" - ele vai limitar a porcentagem que eu 
+    determinar para aquela operação, logo. se eu digo que é 100%, mesmo adicionando 16px a esquerda e direita, ele não ultrapassará os 100% */                   
+
+    /* padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px; */
+
+    /* Padding(direção) diz quê, eu vou adicionar tamanho para um determinado div ou objeto, dando largura e altura. "top and bottom" - altura tanto para cima quanto baixo
+    "left and right" - largura tanto para a direita quanto para a esquerda. também posso agrupar igual foi feito com "margin: 0 auto 70px auto;" sendo Padding (top and bottom)
+    e (left and right), segue exemplo abaixo. */
+
+    padding: 8px 16px;
+
+    /* border-top-left-radius: 4px;
+    border-top-right-radius: 4px;                 "border-top-left-radius, etc" - serve para limitar um certo lado que quero por, se caso total, usa a mesma ideia anterior
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px; */
+
+    border-radius: 4px;
+    border: 1px black solid
+
+    /* No border pode se colocar a grossura do contorno da borda, pode se colocar logo em seguida a cor e o formato da linha */
+
+}
+
+/* MAIN */
+main .donors {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+footer {
+    margin-top: auto;
+    padding: 16px;
+
+    border: 1px solid #eee;
+}
