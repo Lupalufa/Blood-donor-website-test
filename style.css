@@ -1,5 +1,15 @@
 /* GLOBAL */
 
+
+    /* Todo o navegador ele tem um limite caracteristico que pode ajudar ou atrapalhar, nesse caso. o sistema identifica que eu tenho um conteúdo de
+    100% e estou adicionando mais 16 px a esquerda e direita, logo. Eu tenho 32px + 100% totalizando 132px, "Box Sizing: border-box" - ele vai limitar a porcentagem que eu 
+    determinar para aquela operação, logo. se eu digo que é 100%, mesmo adicionando 16px a esquerda e direita, ele não ultrapassará os 100% */
+
+* {
+    /* Correção de comportamento padrão do css */
+    box-sizing: border-box;
+}
+
 html, body {
     margin: 0;
 }
@@ -9,6 +19,16 @@ body {
     flex-direction: column;
 
     height: 100vh;
+
+    /* FONTE */
+    font-family: "Roboto", sans-serif;
+
+    /* Background color */
+    background-color: #f9f9f9;
+}
+
+h1, h2 {
+    color: #000000cc;
 }
 
 /* TITULOS */
@@ -16,8 +36,14 @@ header h1, main h2 {
     margin-bottom: 70px;
 }
 
+main h2 span {
+    color: #ff4f4f;
+}
+
 .form h2 {
     text-align: right;
+    color: white;
+    font-size: 18px;
 }
 
 /* ESTRUTURA */
@@ -50,29 +76,46 @@ header, .form, main {
 
 /* HEADER */
 header button {
+    margin-top: 16px;
     padding: 8px 16px;
     border-radius: 4px;
+    border: none;
+
+    background-color: #ff4f4f;
+    color: white;
+
+    font-weight: bold;
+}
+
+.logo{
+    width: 150px;
+    margin: 70px 0;
+
+}
+
+header p {
+    font-size: 14px;
 }
 
 /* FORM */
 section.form {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: center;
 
     grid-gap: 45px;
+
+    background-color: #ff4f4f;
+    padding: 16px 64px;
+
+    border-radius: 6px;
 }
 
 form input,
 form button {
     width: 100%;
 
-    margin-bottom: 4px;
-
-    box-sizing: border-box;   
-    
-    /* Todo o navegador ele tem um limite caracteristico que pode ajudar ou atrapalhar, nesse caso. o sistema identifica que eu tenho um conteúdo de
-    100% e estou adicionando mais 16 px a esquerda e direita, logo. Eu tenho 32px + 100% totalizando 132px, "Box Sizing: border-box" - ele vai limitar a porcentagem que eu 
-    determinar para aquela operação, logo. se eu digo que é 100%, mesmo adicionando 16px a esquerda e direita, ele não ultrapassará os 100% */                   
+    margin-bottom: 4px;                   
 
     /* padding-top: 8px;
     padding-bottom: 8px;
@@ -91,10 +134,23 @@ form button {
     border-bottom-right-radius: 4px; */
 
     border-radius: 4px;
-    border: 1px black solid
+    border: 1px #ffffff88 solid;
 
     /* No border pode se colocar a grossura do contorno da borda, pode se colocar logo em seguida a cor e o formato da linha */
 
+}
+
+form input {
+    background-color: transparent;
+
+}
+
+form input::placeholder {
+    color: #ffffffaa;
+}
+
+form button {
+    font-weight: bold;
 }
 
 /* MAIN */
@@ -103,8 +159,42 @@ main .donors {
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+.blood {
+    color: #ff4f4f;
+    font-weight: bold;
+    font-size: 12px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    justify-content: center;
+    
+}
+
+.blood::before {
+    content: "";
+    background-color: #ff4f4f11;
+
+    width: 40px;
+    height: 40px;
+
+    position: absolute;
+
+    border-radius: 50%;
+    border-top-right-radius: 0;
+
+    transform: rotate(-45deg);
+}
+
+.donor p {
+    margin-top: 24px;
+    font-size: 14px;
+}
+
 footer {
     margin-top: auto;
+
     padding: 16px;
 
     border: 1px solid #eee;
