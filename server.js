@@ -2,7 +2,7 @@
 const express = require("express")
 const server = express()
 
-// Configurar o servidor para arquivos extras //
+// Configurar o servidor para arquivos  //
 server.use(express.static('frontend'))
 
 // Configurando a template engine //
@@ -35,7 +35,7 @@ const donors = [
 
 // configurando a apresentação da página // 
 server.get("/", function(req, res){
-    return res.render("index.html", { valor: "1" })
+    return res.render("index.html", { donors })
 })
 
 
