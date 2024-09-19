@@ -26,7 +26,7 @@
 
     <section class="form hide">
         <h2>Entre na lista de doadores</h2>
-        <form action="/">
+        <form action="/" method="post">
             <input 
             type="text" 
             name="name"
@@ -54,8 +54,8 @@
             {% for donor in donors %}
             
             <div class="donor">
-                <div class="blood">AB+</div>
-                <p>Diego Montane</p>
+                <div class="blood">{{donor.blood}}</div>
+                <p>{{donor.name}}</p>
             </div>
 
             {%endfor%}
